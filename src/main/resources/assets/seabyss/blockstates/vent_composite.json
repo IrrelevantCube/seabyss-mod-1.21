@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "seabyss:block/vent_composite"
+    }
+  }
+}
