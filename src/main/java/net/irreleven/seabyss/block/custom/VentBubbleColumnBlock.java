@@ -11,6 +11,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -25,10 +26,11 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
-public class VentBubbleColumnBlock extends Block implements FluidDrainable {
+public class VentBubbleColumnBlock extends Block implements FluidDrainable, VentColumnLavaLike {
     public static final MapCodec<VentBubbleColumnBlock> CODEC = createCodec(VentBubbleColumnBlock::new);
     public static final BooleanProperty DRAG = Properties.DRAG;
     private static final int SCHEDULED_TICK_DELAY = 5;
@@ -46,8 +48,18 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable {
     @Override
     protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         BlockState blockState = world.getBlockState(pos.up());
+        entity.onBubbleColumnSurfaceCollision((Boolean)state.get(DRAG));
+        double updatedVelocity = entity.getVelocity().y + 0.35;
+        entity.setVelocity(entity.getVelocity().x, updatedVelocity, entity.getVelocity().z);
+        if (entity instanceof LivingEntity living) {
+            if (living.age % 5 == 0) {
+                living.damage(
+                        world.getDamageSources().lava(),
+                        1.0f
+                );
+            }
+        }
         if (blockState.isAir()) {
-            entity.onBubbleColumnSurfaceCollision((Boolean)state.get(DRAG));
             if (!world.isClient) {
                 ServerWorld serverWorld = (ServerWorld)world;
 
@@ -59,12 +71,14 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable {
                             ParticleTypes.BUBBLE, pos.getX() + world.random.nextDouble(), pos.getY() + 1, pos.getZ() + world.random.nextDouble(), 1, 0.0, 0.01, 0.0, 1.0
                     );
                 }
+
             }
         } else {
             entity.onBubbleColumnCollision((Boolean)state.get(DRAG));
         }
 
     }
+
 
 
     @Override
@@ -146,55 +160,13 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable {
     }
 
 
-    @Override
-    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (world.getGameRules().getBoolean(GameRules.DO_FIRE_TICK)) {
-            int i = random.nextInt(3);
-            if (i > 0) {
-                BlockPos blockPos = pos;
-
-                for (int j = 0; j < i; j++) {
-                    blockPos = blockPos.add(random.nextInt(3) - 1, 1, random.nextInt(3) - 1);
-                    if (!world.canSetBlock(blockPos)) {
-                        return;
-                    }
-
-                    BlockState blockState = world.getBlockState(blockPos);
-                    if (blockState.isAir()) {
-                        if (this.canLightFire(world, blockPos)) {
-                            world.setBlockState(blockPos, AbstractFireBlock.getState(world, blockPos));
-                            return;
-                        }
-                    } else if (blockState.blocksMovement()) {
-                        return;
-                    }
-                }
-            } else {
-                for (int k = 0; k < 3; k++) {
-                    BlockPos blockPos2 = pos.add(random.nextInt(3) - 1, 0, random.nextInt(3) - 1);
-                    if (!world.canSetBlock(blockPos2)) {
-                        return;
-                    }
-
-                    if (world.isAir(blockPos2.up()) && this.hasBurnableBlock(world, blockPos2)) {
-                        world.setBlockState(blockPos2.up(), AbstractFireBlock.getState(world, blockPos2));
-                    }
-                }
-            }
+    public void applyVentEffect(LivingEntity livingEntity, World world, BlockPos pos) {
+        if (livingEntity.age % 10 == 0) {
+            livingEntity.damage(
+                    world.getDamageSources().lava(),
+                    1.0f
+            );
         }
-    }
-    private boolean canLightFire(WorldView world, BlockPos pos) {
-        for (Direction direction : Direction.values()) {
-            if (this.hasBurnableBlock(world, pos.offset(direction))) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private boolean hasBurnableBlock(WorldView world, BlockPos pos) {
-        return pos.getY() >= world.getBottomY() && pos.getY() < world.getTopY() && !world.isChunkLoaded(pos) ? false : world.getBlockState(pos).isBurnable();
     }
 
     @Override
