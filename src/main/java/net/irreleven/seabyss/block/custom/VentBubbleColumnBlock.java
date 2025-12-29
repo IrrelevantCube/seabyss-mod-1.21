@@ -87,6 +87,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable {
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             BlockPos.Mutable mutable = pos.mutableCopy().move(Direction.UP);
 
+
             while (isStillWater(world.getBlockState(mutable))) {
                 if (!world.setBlockState(mutable, blockState, Block.NOTIFY_LISTENERS)) {
                     return;
@@ -117,7 +118,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable {
         double e = pos.getY();
         double f = pos.getZ();
         if ((Boolean)state.get(DRAG)) {
-            world.addImportantParticle(ParticleTypes.CURRENT_DOWN, d + 0.5, e + 0.8, f, 0.0, 0.0, 0.0);
+            world.addImportantParticle(ParticleTypes.CURRENT_DOWN, d + 0.5, e + 0.5, f, 0.0, 0.5, 0.0);
             if (random.nextInt(200) == 0) {
                 world.playSound(
                         d,
@@ -131,10 +132,11 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable {
                 );
             }
         } else {
-            world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + 0.5, e, f + 0.5, 0.0, 0.2, 0.0);
-            world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.0, 0.2, 0.0);
-            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + 0.5, e, f + 0.5, 0.0, 1.0, 0.0);
-            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.0, 1.0, 0.0);
+            world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + 0.5, e, f + 0.5, 0.0, 0.08, 0.0);
+            world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.0, 0.1, 0.0);
+            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.0, 5.0, 0.0);
+            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.0, 7.0, 0.0);
+            world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.0, 6.0, 0.0);
             if (random.nextInt(200) == 0) {
                 world.playSound(
                         d, e, f, SoundEvents.BLOCK_BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundCategory.BLOCKS, 0.2F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.5F, false

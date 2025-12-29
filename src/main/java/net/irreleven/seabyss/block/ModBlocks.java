@@ -23,6 +23,14 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(1.5f, 6)
                     .requiresTool()
             ));
+    public static final Block VULCAN_STONE = registerSeaBlock("vulcan_stone",
+            new Block(AbstractBlock.Settings.create().strength(1.5f, 6)
+                    .requiresTool()
+            ));
+    public static final Block HYDROTHERMAL_VENT_BLOCK = registerSeaBlock("hydrothermal_vent_block",
+            new Block(AbstractBlock.Settings.create().strength(1.5f, 6)
+                    .requiresTool()
+            ));
     public static final Block VENT_COMPOSITE_BLOCK = registerSeaBlock("vent_composite",
             new VentCompositeBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.DARK_RED)
@@ -66,6 +74,8 @@ public class ModBlocks {
                 {
                     fabricItemGroupEntries.add(ModBlocks.GABBRO);
                     fabricItemGroupEntries.add(ModBlocks.VENT_COMPOSITE_BLOCK);
+                    fabricItemGroupEntries.add(ModBlocks.HYDROTHERMAL_VENT_BLOCK);
+                    fabricItemGroupEntries.add(ModBlocks.VULCAN_STONE);
                 }
         );
 

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "seabyss:block/hydrothermal_vent_block"
+    }
+  }
+}
