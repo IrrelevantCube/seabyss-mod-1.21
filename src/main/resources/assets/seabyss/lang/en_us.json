@@ -5,5 +5,7 @@
   "block.seabyss.gabbro": "Gabbro",
   "block.seabyss.vent_composite": "Hydrothermal Vent",
   "block.seabyss.hydrothermal_vent_block": "Vent Composite",
-  "block.seabyss.vulcan_stone": "Vulcan Stone"
+  "block.seabyss.vulcan_stone": "Vulcan Stone",
+
+  "itemgroup.seabyss.seabyss_group": "SEAbyss"
 }

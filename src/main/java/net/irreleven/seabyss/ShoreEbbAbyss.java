@@ -3,6 +3,7 @@ package net.irreleven.seabyss;
 import net.fabricmc.api.ModInitializer;
 
 import net.irreleven.seabyss.block.ModBlocks;
+import net.irreleven.seabyss.item.ModItemGroups;
 import net.irreleven.seabyss.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ public class ShoreEbbAbyss implements ModInitializer {
 	public void onInitialize() {
 		ModItems.seaItems();
 		ModBlocks.seaBlocks();
+		ModItemGroups.seaItemGroups();
 
 		LOGGER.info("Hello Fabric Oceans!");
 	}
