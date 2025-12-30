@@ -55,7 +55,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
             if (living.age % 5 == 0) {
                 living.damage(
                         world.getDamageSources().lava(),
-                        1.0f
+                        1.5f
                 );
             }
         }

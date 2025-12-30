@@ -33,14 +33,13 @@ public class ModBlocks {
             ));
     public static final Block VENT_COMPOSITE_BLOCK = registerSeaBlock("vent_composite",
             new VentCompositeBlock(AbstractBlock.Settings.create()
-                    .mapColor(MapColor.DARK_RED)
+                    .mapColor(MapColor.BLACK)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresTool()
                     .luminance(state -> 3)
                     .strength(0.5F)
                     .allowsSpawning((state, world, pos, entityType) -> entityType.isFireImmune())
                     .postProcess(Blocks::always)
-                    .emissiveLighting(Blocks::always)
             ));
     public static final Block VENT_BUBBLE_COLUMN = registerSeaBlock("vent_bubble_column",
             new VentBubbleColumnBlock(
