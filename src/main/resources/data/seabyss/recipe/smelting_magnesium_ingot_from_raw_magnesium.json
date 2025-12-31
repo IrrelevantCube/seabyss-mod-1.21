@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 500,
+  "experience": 0.2,
+  "group": "magnesium",
+  "ingredient": {
+    "item": "seabyss:raw_magnesium"
+  },
+  "result": {
+    "id": "seabyss:magnesium_ingot"
+  }
+}

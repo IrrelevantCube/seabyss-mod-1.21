@@ -5,7 +5,10 @@ import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -52,6 +55,23 @@ public class VentCompositeBlock extends Block {
 
         super.onSteppedOn(world, pos, state, entity);
     }
+    @Override
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        double d = pos.getX();
+        double e = pos.getY();
+        double f = pos.getZ();
+            world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + 0.5, e + 1, f + 0.5, 0.0, 0.2, 0.0);
+        world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.0, 0.2, 0.0);
+        world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.01, 0.02, 0.02);
+        world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), 0.02, 0.02, 0.01);
+        world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), -0.01, 0.02, -0.02);
+        world.addImportantParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d + random.nextFloat(), e + random.nextFloat(), f + random.nextFloat(), -0.02, 0.02, -0.01);
+        if (random.nextInt(200) == 0) {
+                world.playSound(
+                        d, e, f, SoundEvents.BLOCK_BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundCategory.BLOCKS, 0.2F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.5F, false
+                );
+            }
+        }
 
     @Override
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
