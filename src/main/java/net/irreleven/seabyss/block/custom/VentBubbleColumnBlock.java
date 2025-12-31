@@ -120,7 +120,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
     private static BlockState getBubbleState(BlockState state) {
         if (state.isOf(ModBlocks.VENT_BUBBLE_COLUMN)) {
             return state;
-        } else if (state.isOf(ModBlocks.VENT_COMPOSITE_BLOCK)) {
+        } else if (state.isOf(ModBlocks.HYDROTHERMAL_VENT_BLOCK)) {
             return ModBlocks.VENT_BUBBLE_COLUMN.getDefaultState().with(DRAG, false);
         }
         return state;
@@ -184,7 +184,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
     @Override
     protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockState blockState = world.getBlockState(pos.down());
-        return blockState.isOf(ModBlocks.VENT_BUBBLE_COLUMN) || blockState.isOf(ModBlocks.VENT_COMPOSITE_BLOCK);
+        return blockState.isOf(ModBlocks.VENT_BUBBLE_COLUMN) || blockState.isOf(ModBlocks.HYDROTHERMAL_VENT_BLOCK);
     }
 
     @Override

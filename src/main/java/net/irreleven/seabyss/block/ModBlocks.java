@@ -27,11 +27,11 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(1.5f, 6)
                     .requiresTool()
             ));
-    public static final Block HYDROTHERMAL_VENT_BLOCK = registerSeaBlock("hydrothermal_vent_block",
+    public static final Block VENT_COMPOSITE_BLOCK = registerSeaBlock("vent_composite",
             new Block(AbstractBlock.Settings.create().strength(1.5f, 6)
                     .requiresTool()
             ));
-    public static final Block VENT_COMPOSITE_BLOCK = registerSeaBlock("vent_composite",
+    public static final Block HYDROTHERMAL_VENT_BLOCK = registerSeaBlock("hydrothermal_vent_block",
             new VentCompositeBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.BLACK)
                     .instrument(NoteBlockInstrument.BASEDRUM)

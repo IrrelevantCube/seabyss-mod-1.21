@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "side": "seabyss:block/vent_composite",
-    "end": "seabyss:block/vent_composite_top"
-  }
-}
