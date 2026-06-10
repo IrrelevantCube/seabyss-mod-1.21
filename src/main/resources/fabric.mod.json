@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"net.irreleven.seabyss.ShoreEbbAbyssClient"
+		],
+		"terrablender": [
+			"net.irreleven.seabyss.world.biome.ModTerrablenderAPI"
 		]
 	},
 	"mixins": [

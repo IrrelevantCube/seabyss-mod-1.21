@@ -1,14 +1,11 @@
-// 1.21	2025-12-31T15:48:05.9120266	Shore Ebb Abyss/Model Definitions
+// 1.21	2026-06-08T14:54:06.7701895	Shore Ebb Abyss/Model Definitions
 570339bfc7b375f0f3b86843e10e67824bc71e1d assets\seabyss\models\block\vulcan_stone.json
-cb06f9a3ecfd7553f831daa9397b07b27ac560a0 assets\seabyss\blockstates\vent_composite.json
-8ee7ca2147db39f37e35ed1ac936ebf1e3b7728e assets\seabyss\models\block\hydrothermal_vent_block.json
-5a07e31cd46612829678292c7a95f1af8462d755 assets\seabyss\models\item\hydrothermal_vent_block.json
 39cba047d31f1e83fa96c5dc831137c5f9273812 assets\seabyss\models\item\gabbro.json
+cb06f9a3ecfd7553f831daa9397b07b27ac560a0 assets\seabyss\blockstates\vent_composite.json
 5c1d4c1fd3377d517d0ce2e5c63bfa12dde54303 assets\seabyss\models\block\vent_composite.json
 fd0d6162a8d01dde122f1abebd601de8b5b4a08a assets\seabyss\models\item\magnesium_ingot.json
 65a265815d871d992f16600359875f2d7b4d4c47 assets\seabyss\blockstates\gabbro.json
 c596b14e7e49856f93426acb1248c7f984a73645 assets\seabyss\models\block\gabbro.json
-66634ea5c95a16ac1317455866be10c9819614b9 assets\seabyss\blockstates\hydrothermal_vent_block.json
 db8435ee7d3b99dec0a932f36c6945b21c2a1fd9 assets\seabyss\models\item\vent_composite.json
 26c958800f8a2ae4cc7de2cc2f80c8413326b856 assets\seabyss\models\item\vulcan_stone.json
 ee7f3a5a5b5e47a5d1c98b5dcc937a0e1ca4164b assets\seabyss\blockstates\vulcan_stone.json

@@ -1,0 +1,24 @@
+{
+  "name": "seabyss:vent_field/massive_vent_rare",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "seabyss:massive_vent_rare",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:gravity",
+              "heightmap": "OCEAN_FLOOR",
+              "offset": 0
+            }
+          ]
+        },
+        "override_liquid_settings": "apply_waterlogging"
+      }
+    }
+  ]
+}

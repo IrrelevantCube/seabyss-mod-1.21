@@ -1,0 +1,27 @@
+{
+  "name": "seabyss:vent_tower/tower_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "seabyss:vent_cave_tower",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:block_age",
+              "mossiness": 2
+            },
+            {
+              "processor_type": "minecraft:gravity",
+              "heightmap": "OCEAN_FLOOR",
+              "offset": 0
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

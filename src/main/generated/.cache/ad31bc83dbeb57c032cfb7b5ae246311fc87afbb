@@ -1,9 +1,5 @@
-// 1.21	2025-12-31T15:48:05.9110272	Shore Ebb Abyss/Recipes
+// 1.21	2026-06-08T14:54:06.7686853	Shore Ebb Abyss/Recipes
 0bfa12dab1b9d6a22a9f0043c6a8b81b9b0963a8 data\seabyss\advancement\recipes\misc\magnesium_ingot_from_blasting_raw_magnesium.json
-1339e355cb4865064d1ce785bea6e5456758fac1 data\seabyss\recipe\magnesium_ingot_from_blasting_gabbro.json
 3848017e6127a41aaf07a856eef87e5038847bbf data\seabyss\recipe\magnesium_ingot_from_smelting_raw_magnesium.json
-ac5297fa2524228a6e936f7c5ebe6382c2c5a632 data\seabyss\advancement\recipes\misc\magnesium_ingot_from_blasting_gabbro.json
-34ba60564f1bdabb67f91aac04fa6dd5c0f000ff data\seabyss\advancement\recipes\misc\magnesium_ingot_from_smelting_gabbro.json
-009d2957bd2d0543e5d88cd60834f6faa612c6c2 data\seabyss\recipe\magnesium_ingot_from_smelting_gabbro.json
 2f19ee791e01a33986f5ee0941bb64186d73e7a0 data\seabyss\advancement\recipes\misc\magnesium_ingot_from_smelting_raw_magnesium.json
 a4874861437bf6fc1677ea75b4fcb52cd88e6849 data\seabyss\recipe\magnesium_ingot_from_blasting_raw_magnesium.json

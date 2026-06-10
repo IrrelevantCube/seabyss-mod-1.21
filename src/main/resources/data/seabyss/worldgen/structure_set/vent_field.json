@@ -1,0 +1,35 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1642136474,
+    "separation": 1,
+    "spacing": 2,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "seabyss:large_vent",
+      "weight": 20
+    },
+    {
+      "structure": "seabyss:small_vent",
+      "weight": 20
+    },
+    {
+      "structure": "seabyss:massive_vent",
+      "weight": 20
+    },
+    {
+      "structure": "seabyss:miniature_vent",
+      "weight": 16
+    },
+    {
+      "structure": "seabyss:massive_vent_rare",
+      "weight": 2
+    },
+    {
+      "structure": "seabyss:massive_vent_semi_rare",
+      "weight": 12
+    }
+  ]
+}

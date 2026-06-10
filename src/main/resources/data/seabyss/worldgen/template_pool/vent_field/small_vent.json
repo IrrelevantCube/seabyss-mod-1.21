@@ -1,0 +1,24 @@
+{
+  "name": "seabyss:vent_field/small_vent",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "seabyss:small_vent",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:gravity",
+              "heightmap": "OCEAN_FLOOR",
+              "offset": 0
+            }
+          ]
+        },
+        "override_liquid_settings": "apply_waterlogging"
+      }
+    }
+  ]
+}

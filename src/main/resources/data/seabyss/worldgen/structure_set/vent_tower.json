@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 136765353,
+    "separation": 5,
+    "spacing": 32,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "seabyss:vent_tower",
+      "weight": 1
+    }
+  ]
+}
