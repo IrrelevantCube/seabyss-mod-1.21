@@ -123,7 +123,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
         } else if (state.isOf(ModBlocks.HYDROTHERMAL_VENT_BLOCK)) {
             return ModBlocks.VENT_BUBBLE_COLUMN.getDefaultState().with(DRAG, false);
         }
-        return state;
+        return state.isOf(ModBlocks.HYDROTHERMAL_VENT_BLOCK) ? ModBlocks.VENT_BUBBLE_COLUMN.getDefaultState().with(DRAG, false) : Blocks.WATER.getDefaultState();
     }
 
     @Override
@@ -158,15 +158,6 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
     }
 
 
-    public void applyVentEffect(LivingEntity livingEntity, World world, BlockPos pos) {
-        if (livingEntity.age % 10 == 0) {
-            livingEntity.damage(
-                    world.getDamageSources().lava(),
-                    1.0f
-            );
-        }
-    }
-
     @Override
     protected BlockState getStateForNeighborUpdate(
             BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos
@@ -175,10 +166,19 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
         if (!state.canPlaceAt(world, pos)
                 || direction == Direction.DOWN
                 || direction == Direction.UP && !neighborState.isOf(ModBlocks.VENT_BUBBLE_COLUMN) && isStillWater(neighborState)) {
-            world.scheduleBlockTick(pos, this, 5);
+            world.scheduleBlockTick(pos, this, 10);
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    public void applyVentEffect(LivingEntity livingEntity, World world, BlockPos pos) {
+        if (livingEntity.age % 10 == 0) {
+            livingEntity.damage(
+                    world.getDamageSources().lava(),
+                    1.5f
+            );
+        }
     }
 
     @Override
