@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "seabyss:block/composite_ore"
+    }
+  }
+}

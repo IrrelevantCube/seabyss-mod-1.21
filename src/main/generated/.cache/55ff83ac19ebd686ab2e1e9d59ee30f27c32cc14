@@ -1,3 +1,4 @@
-// 1.21	2026-06-08T14:54:06.7686853	Shore Ebb Abyss/Tags for minecraft:block
-37b9e1cc89f8223b26d2f52e9459a02f3ecd4539 data\minecraft\tags\block\mineable\pickaxe.json
+// 1.21	2026-06-24T10:57:55.3941515	Shore Ebb Abyss/Tags for minecraft:block
+64f0933ad854b984b63c8432d66b087f9ff6dad0 data\minecraft\tags\block\mineable\pickaxe.json
+7fddc12d5a078dd2a83393c99bea8d8c9a910cec data\minecraft\tags\block\needs_diamond_tool.json
 7716bf0fa1d4da3af2f3439fa3d0da96a13f546f data\minecraft\tags\block\needs_iron_tool.json

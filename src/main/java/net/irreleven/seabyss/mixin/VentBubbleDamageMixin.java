@@ -1,9 +1,7 @@
 package net.irreleven.seabyss.mixin;
 
 import net.irreleven.seabyss.block.ModBlocks;
-import net.irreleven.seabyss.block.custom.VentBubbleColumnBlock;
-import net.irreleven.seabyss.block.custom.VentColumnLavaLike;
-import net.minecraft.block.AbstractBlock;
+import net.irreleven.seabyss.entity.mob.RedDevilSquidEntity;
 import net.minecraft.block.BubbleColumnBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
@@ -21,6 +19,7 @@ public class VentBubbleDamageMixin {
     )
     private void applyCustomVentEffects (CallbackInfo callbackInfo) {
         LivingEntity livingEntity = (LivingEntity) (Object)this;
+        if (!(livingEntity instanceof RedDevilSquidEntity redDevilSquidEntity)) return;
         World world = livingEntity.getWorld();
 
         if (world.isClient) return;
@@ -31,6 +30,6 @@ public class VentBubbleDamageMixin {
             if (world.getBlockState(pos.down()).isOf(ModBlocks.VENT_COMPOSITE_BLOCK)) {
           }
         }
-    }
 
+    }
 }

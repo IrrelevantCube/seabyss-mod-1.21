@@ -22,8 +22,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter recipeExporter) {
         List<ItemConvertible> MAGNESIUM_SMELTABLES = List.of(ModItems.RAW_MAGNESIUM);
+        List<ItemConvertible> TUNGSTEN_SMELTABLES = List.of(ModItems.RAW_TUNGSTEN);
 
         offerSmelting(recipeExporter, MAGNESIUM_SMELTABLES, RecipeCategory.MISC, ModItems.MAGNESIUM_INGOT, 0.25f, 200, "magnesium");
         offerBlasting(recipeExporter, MAGNESIUM_SMELTABLES, RecipeCategory.MISC, ModItems.MAGNESIUM_INGOT, 0.25f, 100, "magnesium");
+        offerSmelting(recipeExporter, TUNGSTEN_SMELTABLES, RecipeCategory.MISC, ModItems.TUNGSTEN_INGOT, 0.5f, 2000, "tungsten");
+        offerBlasting(recipeExporter, TUNGSTEN_SMELTABLES, RecipeCategory.MISC, ModItems.TUNGSTEN_INGOT, 0.5f, 1001, "tungsten");
     }
 }

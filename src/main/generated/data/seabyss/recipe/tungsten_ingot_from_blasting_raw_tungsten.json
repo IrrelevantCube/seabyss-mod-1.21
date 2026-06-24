@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 1001,
+  "experience": 0.5,
+  "group": "tungsten",
+  "ingredient": {
+    "item": "seabyss:raw_tungsten"
+  },
+  "result": {
+    "id": "seabyss:tungsten_ingot"
+  }
+}

@@ -13,19 +13,13 @@ import javax.swing.text.html.HTML;
 public class ModBiomeTags {
 
 
-    public static final RegistryKey<Biome> VENT_FIELD_HAS_STRUCTURE = ModBiomes.HOT_OCEAN_BIOME;
+    public static final RegistryKey<Biome> HOT_OCEAN_BIOME = register("hot_ocean_biome");
 
     private ModBiomeTags() {
     }
 
-    public static class Biomes {
-
-        public static final TagKey<Biome> VENT_FIELD_HAS_STRUCTURE =
-                createTag("vent_field_has_structure");
-
-        private static TagKey<Biome> createTag(String name) {
-            return TagKey.of(RegistryKeys.BIOME, Identifier.of(ShoreEbbAbyss.MOD_ID, name));
-        }
+    private static RegistryKey<Biome> register(String name) {
+        return RegistryKey.of(RegistryKeys.BIOME, Identifier.of(ShoreEbbAbyss.MOD_ID, name));
     }
 }
 

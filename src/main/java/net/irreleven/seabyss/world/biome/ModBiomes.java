@@ -1,6 +1,7 @@
 package net.irreleven.seabyss.world.biome;
 
 import net.irreleven.seabyss.ShoreEbbAbyss;
+import net.irreleven.seabyss.entity.ModEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registerable;
@@ -37,7 +38,8 @@ public class ModBiomes {
 
     public static Biome hotOceanBiome(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.DROWNED, 1, 2, 3));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.RED_DEVIL_SQUID, 3, 1, 6));
+
 
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
@@ -46,8 +48,6 @@ public class ModBiomes {
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
         globalOvereworldGeneration(biomeBuilder);
-        DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
-        DefaultBiomeFeatures.addKelp(biomeBuilder);
 
         return new Biome.Builder()
                 .precipitation(true)
@@ -58,7 +58,7 @@ public class ModBiomes {
                 .effects((new BiomeEffects.Builder())
                         .waterColor(0x45ADF2)
                         .waterFogColor(0x340407)
-                        .skyColor(0x30c918)
+                        .skyColor(0x6A6262)
                         .fogColor(0x45adf2)
                         .moodSound(BiomeMoodSound.CAVE).build())
                 .build();

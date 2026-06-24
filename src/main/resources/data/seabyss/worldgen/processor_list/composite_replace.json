@@ -1,0 +1,48 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "seabyss:vent_composite",
+            "probability": 0.2,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "seabyss:gabbro"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "seabyss:vent_composite",
+            "probability": 0.05,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "seabyss:composite_ore"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "seabyss:vulcan_stone",
+            "probability": 0.025,
+            "predicate_type": "minecraft:random_block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "seabyss:hydrothermal_vent_block"
+          }
+        }
+      ]
+    }
+  ]
+}

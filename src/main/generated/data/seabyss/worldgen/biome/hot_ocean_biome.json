@@ -49,9 +49,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen",
-      "minecraft:seagrass_simple",
-      "minecraft:kelp_cold"
+      "minecraft:glow_lichen"
     ]
   ],
   "has_precipitation": true,
@@ -66,14 +64,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:drowned",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 1
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {

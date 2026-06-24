@@ -36,6 +36,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.GABBRO, oreDrops(ModBlocks.GABBRO, ModItems.RAW_MAGNESIUM));
         addDrop(ModBlocks.HYDROTHERMAL_VENT_BLOCK, oreDrops(ModBlocks.HYDROTHERMAL_VENT_BLOCK, Items.AIR));
         addDrop(ModBlocks.GABBRO, mobLikeOreDrops(ModBlocks.GABBRO, ModItems.RAW_MAGNESIUM, 3, 7));
+        addDrop(ModBlocks.COMPOSITE_ORE, mobLikeOreDrops(ModBlocks.COMPOSITE_ORE, ModItems.RAW_TUNGSTEN, 0, 1));
+        addDrop(ModBlocks.COMPOSITE_ORE, mobLikeOreDrops(ModBlocks.COMPOSITE_ORE, Items.DIAMOND, 1, 2));
+        addDrop(ModBlocks.COMPOSITE_ORE, mobLikeOreDrops(ModBlocks.COMPOSITE_ORE, Items.EMERALD, 1, 2));
+        addDrop(ModBlocks.COMPOSITE_ORE, mobLikeOreDrops(ModBlocks.COMPOSITE_ORE, Items.REDSTONE, 0, 2));
     }
 
 
@@ -45,7 +49,5 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 ItemEntry.builder(item).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(minDrops, maxDrops))))
                 .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
     }
-
-
 
 }

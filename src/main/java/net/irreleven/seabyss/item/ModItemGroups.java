@@ -19,9 +19,14 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.MAGNESIUM_INGOT);
                         entries.add(ModItems.RAW_MAGNESIUM);
-                        entries.add(ModBlocks.VULCAN_STONE);
+                        entries.add(ModItems.RAW_TUNGSTEN);
+                        entries.add(ModItems.TUNGSTEN_INGOT);
                         entries.add(ModBlocks.VENT_COMPOSITE_BLOCK);
+                        entries.add(ModBlocks.VULCAN_STONE);
+                        entries.add(ModBlocks.COMPOSITE_ORE);
+                        entries.add(ModBlocks.HYDROTHERMAL_VENT_BLOCK);
                         entries.add(ModBlocks.GABBRO);
+                        entries.add(ModItems.RED_DEVIL_SQUID_SPAWN_EGG);
                     }).build());
 
 

@@ -2,8 +2,11 @@ package net.irreleven.seabyss.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.irreleven.seabyss.block.ModBlocks;
+import net.irreleven.seabyss.entity.ModEntities;
+import net.irreleven.seabyss.entity.mob.RedDevilSquidEntity;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
@@ -26,7 +29,6 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
 import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
@@ -40,7 +42,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
         return CODEC;
     }
 
-    public VentBubbleColumnBlock(AbstractBlock.Settings settings) {
+    public VentBubbleColumnBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(DRAG, true));
     }
@@ -52,12 +54,13 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
         double updatedVelocity = entity.getVelocity().y + 0.35;
         entity.setVelocity(entity.getVelocity().x, updatedVelocity, entity.getVelocity().z);
         if (entity instanceof LivingEntity living) {
-            if (living.age % 5 == 0) {
+            if (living.age % 5 == 0 && !(living instanceof RedDevilSquidEntity)) {
                 living.damage(
                         world.getDamageSources().lava(),
                         1.5f
                 );
             }
+
         }
         if (blockState.isAir()) {
             if (!world.isClient) {
@@ -179,6 +182,7 @@ public class VentBubbleColumnBlock extends Block implements FluidDrainable, Vent
                     1.5f
             );
         }
+        if (!(livingEntity instanceof RedDevilSquidEntity redDevilSquidEntity)) return;
     }
 
     @Override

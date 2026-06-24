@@ -6,7 +6,11 @@ import net.irreleven.seabyss.block.ModBlocks;
 import net.irreleven.seabyss.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
+import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -18,11 +22,17 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.VENT_COMPOSITE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GABBRO);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.VULCAN_STONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPOSITE_ORE);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.RAW_MAGNESIUM, Models.GENERATED);
         itemModelGenerator.register(ModItems.MAGNESIUM_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RAW_TUNGSTEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TUNGSTEN_INGOT, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.RED_DEVIL_SQUID_SPAWN_EGG,
+                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
     }
 }

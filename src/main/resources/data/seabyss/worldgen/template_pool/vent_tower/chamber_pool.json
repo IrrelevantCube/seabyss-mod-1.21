@@ -3,19 +3,21 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
         "location": "seabyss:dead_chamber",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element",
-        "processors": {
-          "processors": [
-            {
-              "processor_type": "minecraft:block_age",
-              "mossiness": 2
-            }
-          ]
-        }
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "seabyss:ore_chamber1",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element",
+        "processors": "seabyss:composite_replace"
       }
     }
   ]

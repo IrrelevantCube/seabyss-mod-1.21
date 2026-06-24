@@ -1,12 +1,18 @@
-// 1.21	2026-06-08T14:54:06.7701895	Shore Ebb Abyss/Model Definitions
+// 1.21	2026-06-24T10:57:55.3966612	Shore Ebb Abyss/Model Definitions
 570339bfc7b375f0f3b86843e10e67824bc71e1d assets\seabyss\models\block\vulcan_stone.json
-39cba047d31f1e83fa96c5dc831137c5f9273812 assets\seabyss\models\item\gabbro.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\seabyss\models\item\red_devil_squid_spawn_egg.json
+7cdd6f7c02042e012668c57622530f9de722aded assets\seabyss\models\block\composite_ore.json
 cb06f9a3ecfd7553f831daa9397b07b27ac560a0 assets\seabyss\blockstates\vent_composite.json
+39cba047d31f1e83fa96c5dc831137c5f9273812 assets\seabyss\models\item\gabbro.json
+0518c99dd3c352e3e2f59afff728631664ed7d07 assets\seabyss\models\item\tungsten_ingot.json
 5c1d4c1fd3377d517d0ce2e5c63bfa12dde54303 assets\seabyss\models\block\vent_composite.json
 fd0d6162a8d01dde122f1abebd601de8b5b4a08a assets\seabyss\models\item\magnesium_ingot.json
 65a265815d871d992f16600359875f2d7b4d4c47 assets\seabyss\blockstates\gabbro.json
 c596b14e7e49856f93426acb1248c7f984a73645 assets\seabyss\models\block\gabbro.json
+5a2aab58b370a4a9dd6b021ac76accf9c5ee62ed assets\seabyss\blockstates\composite_ore.json
+e190c83230e6c4de9ae819bb08abc9c5e9b39564 assets\seabyss\models\item\raw_tungsten.json
 db8435ee7d3b99dec0a932f36c6945b21c2a1fd9 assets\seabyss\models\item\vent_composite.json
 26c958800f8a2ae4cc7de2cc2f80c8413326b856 assets\seabyss\models\item\vulcan_stone.json
+87bb073610274543c575afd76d3e252adf2dcb2a assets\seabyss\models\item\composite_ore.json
 ee7f3a5a5b5e47a5d1c98b5dcc937a0e1ca4164b assets\seabyss\blockstates\vulcan_stone.json
 220625dda5bf294a4007ceba119a377505a22ec1 assets\seabyss\models\item\raw_magnesium.json

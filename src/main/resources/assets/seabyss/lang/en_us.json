@@ -1,11 +1,16 @@
 {
   "item.seabyss.raw_magnesium": "Raw Magnesium",
   "item.seabyss.magnesium_ingot": "Magnesium Ingot",
+  "item.seabyss.raw_tungsten": "Raw Tungsten",
+  "item.seabyss.tungsten_ingot": "Tungsten Ingot",
 
   "block.seabyss.gabbro": "Gabbro",
   "block.seabyss.vent_composite": "Vent Composite",
+  "block.seabyss.composite_ore": "Composite Ore",
   "block.seabyss.hydrothermal_vent_block": "Hydrothermal Vent",
   "block.seabyss.vulcan_stone": "Vulcan Stone",
+
+  "item.seabyss.red_devil_squid_spawn_egg": "Red Devil Squid Spawn Egg",
 
   "itemgroup.seabyss.seabyss_group": "SEAbyss"
 }

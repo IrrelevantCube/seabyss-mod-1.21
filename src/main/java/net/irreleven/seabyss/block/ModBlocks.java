@@ -31,6 +31,10 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(1.5f, 6)
                     .requiresTool()
             ));
+    public static final Block COMPOSITE_ORE = registerSeaBlock("composite_ore",
+            new Block(AbstractBlock.Settings.create().strength(10f, 7)
+                    .requiresTool()
+            ));
     public static final Block HYDROTHERMAL_VENT_BLOCK = registerSeaBlock("hydrothermal_vent_block",
             new VentCompositeBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.BLACK)
